@@ -1,0 +1,58 @@
+* {
+ border: solid 1px;
+ font-family: 'Merriweather Sans', sans-serif;
+}
+
+.navbar, .nav-list{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+}
+
+.navbar {
+	padding: 0 10%;
+}
+
+.list-item {
+	padding: 0 2rem;
+}
+
+.logo {
+	font-weight: bold;
+}
+
+
+
+
+
+/* media query */
+
+@media (max-width:1250px){
+	/* 銀幕寬度小於1250套用此區塊 */
+	.content{
+			width:100%;
+	}
+}
+
+@media (max-width:800px){
+	/* 銀幕寬度小於800套用此區塊 */
+	.menu_right_desktop{
+			display: none;
+	}
+	.menu_right_mobile{
+			display: block;
+	}
+	.banner{
+			font-size: 20px;
+	}
+}
+
+@media (max-width:500px){
+	/* 銀幕寬度小於500套用此區塊 */
+	.box{
+			width:90%;
+	}
+	.banner{
+			font-size: 12px;
+	}
+}
