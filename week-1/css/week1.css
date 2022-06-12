@@ -1,237 +1,250 @@
 * {
- /* border: solid 1px; */
- font-family: 'Merriweather Sans', sans-serif;
- position: relative;
+  /* border: solid 1px; */
+  font-family: 'Merriweather Sans', sans-serif;
+  position: relative;
 }
 
 /* css for navbar */
 
-.navbar, .nav-menu{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;	
+.navbar,
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-list{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-	line-height: 1.5rem;
-	color: white;
+  line-height: 1.5rem;
+  color: white;
 }
 
 .navbar {
-	padding: .5rem 10%;
-	background-color: rgb(47, 47, 47);
-	box-sizing: border-box;
-	width: 100%;
-	position: fixed;
-	z-index: 2;
+  padding: .5rem 10%;
+  background-color: rgb(47, 47, 47);
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
 }
 
 .list-item {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
 }
 
-.list-item a{
-	transition: 0.3s;
-	color: aliceblue;
+.list-item a {
+  transition: 0.3s;
+  color: aliceblue;
 }
 
-.list-item a:hover{
-	color: white;
+.list-item a:hover {
+  color: white;
 }
 
-.list-item:hover .underline{
-	transition: 0.3s;
-	width: 100%;
+.list-item:hover .underline {
+  transition: 0.3s;
+  width: 100%;
 }
 
 .underline {
-	width: 0px;
-	margin-top: .25rem;
-	height: 2px;
-	background-color: #fff;
+  width: 0px;
+  margin-top: .25rem;
+  height: 2px;
+  background-color: #fff;
 }
 
 .burger-menu {
-	display: none;
-	color: white;
-	cursor: pointer;
+  display: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* css for hero header */
 
 .banner {
-	/* background-color: rgb(40, 41, 43); */
-	background-image: url(../cover_photo.jpg);
-	background-size: cover;
-	background-position: center;
-	padding-top: 4rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 400px;
+  /* background-color: rgb(40, 41, 43); */
+  background-image: url(../cover_photo.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
 }
 
 .main-info {
-	font-size: 1.5rem;
-	color: white;
+  font-size: 1.5rem;
+  color: white;
   text-align: center;
 }
 
-.divide-line{
+.divide-line {
   display: inline;
 }
 
-.line-change{
+.line-change {
   display: none;
 }
 
 /* css for content */
 
-.content{
-	background-color: rgb(21, 23, 24);
-	padding-bottom: 10vh;
-}
-
-.hint{
-	top: -3rem;
-	background-color: rgb(57, 57, 57);
-	display: flex;
-	flex-direction: column;
-	padding: 1rem 2rem;
-	border-radius: 1.5rem;
-	text-align: center;
-	align-items: center;
-	color: rgb(182, 182, 182);
-}
-
-.down-icon{
-	margin-top: 1rem;
-}
 .content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  background-color: rgb(21, 23, 24);
+  padding-bottom: 10vh;
 }
 
-.platforms{
-	max-width: 1200px;
-	width: 80%;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 1rem;
-	justify-content: space-between
+.hint {
+  top: -3rem;
+  background-color: rgb(57, 57, 57);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  align-items: center;
+  color: rgb(182, 182, 182);
 }
 
-.platform{
+.down-icon {
+  margin-top: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platforms {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  justify-content: space-between
+}
+
+.platform {
   width: 40%;
-	margin: 1.75rem;
+  margin: 1.75rem;
   border-radius: 5px;
   height: 35vh;
-	overflow: hidden;
+  overflow: hidden;
 }
 
-.platform-img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.platform-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mask {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	transition: 0.3s;
-	background-color: rgba(0,0,0,0.0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.0);
 }
+
 .platform:hover .mask {
-	background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .platform-title {
-	font-size: 1.5rem;
-	color: white;
-	position: absolute;
-	bottom: -30%;
-	width: 100%;
-	text-align: center;
-	transition: 0.3s;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  bottom: -30%;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .platform:hover .platform-title {
-	bottom: 35%;
+  bottom: 35%;
 }
 
 .more-info-btn {
-	border: solid 1px white;
-	color: white;
-	background-color: rgba(255, 255, 255, 0.0);
-	margin-top: 3rem;
-	border-radius: .5rem;
-	padding: .75rem 1.5rem;
-	cursor: pointer;
-	transition: 0.3s;
+  border: solid 1px white;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.0);
+  margin-top: 3rem;
+  border-radius: .5rem;
+  padding: .75rem 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.more-info-btn:hover{
-	background-color: rgba(255, 255, 255, 0.2);
+
+.more-info-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* media query */
 
-@media (max-width:1200px){
-	/* 銀幕寬度小於1200套用此區塊 */
-	.content{
-			width:100%;
-	}
+@media (max-width:1200px) {
+
+  /* 銀幕寬度小於1200套用此區塊 */
+  .content {
+    width: 100%;
+  }
+
+  .platforms {
+    width: 80%;
+  }
 }
 
-@media (max-width:800px){
-	/* 銀幕寬度小於800套用此區塊 */
-	.navbar {
-		padding: .5rem 5%;
-	}
-	.nav-list{
-		display: none;
-	}
-	.burger-menu {
-		display: block;
-	}
-	.platform{
-		width: 45%;
-		margin: 1rem 0;
-	}
-	.main-info {
-		font-size: 1rem;
-		color: white;
-	}
+@media (max-width:800px) {
+
+  /* 銀幕寬度小於800套用此區塊 */
+  .navbar {
+    padding: .5rem 5%;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .platform {
+    width: 45%;
+    margin: 1rem 0;
+  }
+
+  .main-info {
+    font-size: 1rem;
+    color: white;
+  }
 }
 
-@media (max-width:500px){
-	/* 銀幕寬度小於500套用此區塊 */
+@media (max-width:500px) {
+  /* 銀幕寬度小於500套用此區塊 */
 
-	.platforms{
-		width: 100%;
-	}
+  .platforms {
+    width: 100%;
+  }
 
-	.platform{
-		width: 100%;
-		margin: 1rem 2rem;
-	}
+  .platform {
+    width: 100%;
+    margin: 1rem 2rem;
+  }
 
-	.divide-line{
-		display: none;
-	}
+  .divide-line {
+    display: none;
+  }
 
-	.line-change{
+  .line-change {
     display: block;
   }
 }
