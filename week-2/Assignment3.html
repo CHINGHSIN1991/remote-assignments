@@ -18,14 +18,14 @@
     function calculate(data) {
       let sum = 0;
       let final_total = 0;
-      for( let i = 0; i < data.products.length; i++) {
+      for (let i = 0; i < data.products.length; i++) {
         sum += data.products[i].price
       }
       final_total = sum * data.discount;
       console.log(final_total);
       return final_total;
     }
-    
+
     calculate({
       discount: 0.1,
       products: [

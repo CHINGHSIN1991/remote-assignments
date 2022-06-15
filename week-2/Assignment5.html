@@ -19,18 +19,18 @@
 
     function twoSum(nums, target) {
       indexlist = [];
-      for ( let i = 0; i < nums.length-1 ; i++) {
+      for (let i = 0; i < nums.length - 1; i++) {
         // If the question is about natural numbers, it can be accelerated
         // if ( nums[i] > target){
         //   continue
         // }
-        for( let j = i+1; j < nums.length ; j++) {
+        for (let j = i + 1; j < nums.length; j++) {
           // if ( nums[j] > target){
           //   continue
           // } else if ...
-          if ( (nums[i] + nums[j]) === target ){
-            indexlist.push( i, j );
-            console.log( indexlist );
+          if ((nums[i] + nums[j]) === target) {
+            indexlist.push(i, j);
+            console.log(indexlist);
             return indexlist;
           }
         }
