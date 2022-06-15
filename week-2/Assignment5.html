@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Assignment5</title>
+</head>
+
+<body>
+  <h1>See the results in console</h1>
+  <script>
+    // Assignment 5: Algorithm Practice (Advanced Optional)
+
+    /* Given an array of integers, return indices of the two numbers such that they add up to a
+    specific target. You may assume that each input would have exactly one solution, and you
+    may not use the same element twice. */
+
+    function twoSum(nums, target) {
+      indexlist = [];
+      for ( let i = 0; i < nums.length-1 ; i++) {
+        // If the question is about natural numbers, it can be accelerated
+        // if ( nums[i] > target){
+        //   continue
+        // }
+        for( let j = i+1; j < nums.length ; j++) {
+          // if ( nums[j] > target){
+          //   continue
+          // } else if ...
+          if ( (nums[i] + nums[j]) === target ){
+            indexlist.push( i, j );
+            console.log( indexlist );
+            return indexlist;
+          }
+        }
+      }
+      console.log('No such a pair of numbers');
+      return 'No such a pair of numbers';
+    }
+
+    // cases test
+    twoSum([2, 7, 11, 15], 9); // return [0,1]
+    twoSum([2, 7, 11, 15, 28,], 26); // return [2,3]
+    twoSum([2, 7, 11, 15, 28,], 30); // return [0,4]
+    twoSum([2, 7, 11, 15, 28,], 5); // return 'No such a pair of numbers'
+    twoSum([2, 7, 11, -2, 0,], 0); // return [0,3]
+
+    /*
+    For example:
+    twoSum([2, 7, 11, 15], 9);
+    Should returns:
+    [0, 1]
+    Because:
+    nums[0] + nums[1] is 9
+    */
+  </script>
+</body>
+
+</html>

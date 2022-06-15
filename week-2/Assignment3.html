@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Assignment3</title>
+</head>
+
+<body>
+  <h1>See the results in console</h1>
+  <script>
+    // Assignment 3: Function, Array, and Object
+
+    // Complete the function below to calculate the total price of all products after applying a discount.
+
+    function calculate(data) {
+      let sum = 0;
+      let final_total = 0;
+      for( let i = 0; i < data.products.length; i++) {
+        sum += data.products[i].price
+      }
+      final_total = sum * data.discount;
+      console.log(final_total);
+      return final_total;
+    }
+    
+    calculate({
+      discount: 0.1,
+      products: [
+        {
+          name: "Product 1",
+          price: 100
+        },
+        {
+          name: "Product 2",
+          price: 700
+        },
+        {
+          name: "Product 3",
+          price: 250
+        }
+      ]
+    }); // show the total price of all products after applying a discount
+
+  </script>
+</body>
+
+</html>

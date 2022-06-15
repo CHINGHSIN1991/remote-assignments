@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Assignment2</title>
+</head>
+
+<body>
+  <h1>See the results in console</h1>
+  <script>
+    // Assignment 2: Object
+
+    // Complete the function below to calculate the result of the passing object.
+
+    function calculate(args) {
+      let result;
+
+      if (args.op === '+') {
+        result = args.n1 + args.n2;
+      } else if (args.op === '-') {
+        result = args.n1 - args.n2;
+      } else {
+        result = "Not supported";
+      }
+      console.log(result);
+      return result;
+    }
+
+    calculate({ n1: 2, n2: 3, op: '+' }); // result to 5
+    calculate({ n1: 5, n2: 2, op: '-' }); // result to 3
+    calculate({ n1: 1, n2: 6, op: 'x' }); // result to 'Not supported'
+  </script>
+</body>
+
+</html>
