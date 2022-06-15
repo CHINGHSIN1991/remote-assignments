@@ -17,22 +17,36 @@
     specific target. You may assume that each input would have exactly one solution, and you
     may not use the same element twice. */
 
+    // function twoSum(nums, target) {
+    //   let indexlist = [];
+    //   for (let i = 0; i < nums.length - 1; i++) {
+    //     // If the question is about natural numbers, it can be accelerated
+    //     // if ( nums[i] > target){
+    //     //   continue
+    //     // }
+    //     for (let j = i + 1; j < nums.length; j++) {
+    //       // if ( nums[j] > target){
+    //       //   continue
+    //       // } else if ...
+    //       if ((nums[i] + nums[j]) === target) {
+    //         indexlist.push(i, j);
+    //         console.log(indexlist);
+    //         return indexlist;
+    //       }
+    //     }
+    //   }
+    //   console.log('No such a pair of numbers');
+    //   return 'No such a pair of numbers';
+    // }
+
     function twoSum(nums, target) {
       let indexlist = [];
-      for (let i = 0; i < nums.length - 1; i++) {
-        // If the question is about natural numbers, it can be accelerated
-        // if ( nums[i] > target){
-        //   continue
-        // }
-        for (let j = i + 1; j < nums.length; j++) {
-          // if ( nums[j] > target){
-          //   continue
-          // } else if ...
-          if ((nums[i] + nums[j]) === target) {
-            indexlist.push(i, j);
-            console.log(indexlist);
-            return indexlist;
-          }
+      for (let i = 0; i < nums.length; i++) {
+        let index = nums.indexOf(target - nums[i]);
+        if (index >= 0) {
+          indexlist.push(i, index);
+          console.log(indexlist);
+          return indexlist;
         }
       }
       console.log('No such a pair of numbers');

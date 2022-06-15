@@ -159,23 +159,23 @@
 
   <script>
     function menuOn() {
-      let menupop = document.querySelector("#popmenu");
+      const menupop = document.querySelector("#popmenu");
       menupop.style.right = "0px";
-      let menupopBg = document.querySelector("#popmenu-bg");
+      const menupopBg = document.querySelector("#popmenu-bg");
       menupopBg.style.display = "block";
     }
     function menuOff() {
-      let menupop = document.querySelector("#popmenu");
+      const menupop = document.querySelector("#popmenu");
       menupop.style.right = "-300px";
-      let menupop_bg = document.querySelector("#popmenu-bg");
+      const menupop_bg = document.querySelector("#popmenu-bg");
       menupop_bg.style.display = "none";
     }
     function down() {
-      let banner_text = document.querySelector("#main-info");
+      const banner_text = document.querySelector("#main-info");
       banner_text.innerHTML = "Have a Good Time!"
     }
     function up() {
-      let banner_text = document.querySelector("#main-info");
+      const banner_text = document.querySelector("#main-info");
       banner_text.innerHTML = `Mathematics <span class="divide-line">｜</span><span class="line-change"><br></span>
       Architecture <span class="divide-line">｜</span><span class="line-change"><br></span>
       Graphic <span class="divide-line">｜</span><span class="line-change"><br></span>

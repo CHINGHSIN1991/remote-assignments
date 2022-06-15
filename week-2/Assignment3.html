@@ -21,7 +21,7 @@
       for (let i = 0; i < data.products.length; i++) {
         sum += data.products[i].price
       }
-      final_total = sum * data.discount;
+      final_total = sum * (1 - data.discount);
       console.log(final_total);
       return final_total;
     }
