@@ -163,12 +163,17 @@
       menupop.style.right = "0px";
       const menupopBg = document.querySelector("#popmenu-bg");
       menupopBg.style.display = "block";
+      const fixBg = document.querySelector("body");
+      fixBg.style.top = `-${window.scrollY}px`;
+      fixBg.style.position = 'fixed';      
     }
     function menuOff() {
       const menupop = document.querySelector("#popmenu");
       menupop.style.right = "-300px";
       const menupop_bg = document.querySelector("#popmenu-bg");
       menupop_bg.style.display = "none";
+      const fixBg = document.querySelector("body");
+      fixBg.removeAttribute("style");
     }
     function down() {
       const banner_text = document.querySelector("#main-info");
@@ -188,6 +193,7 @@
       more_content.style.display = "flex";
     }
   </script>
+  
 </body>
 
 </html>

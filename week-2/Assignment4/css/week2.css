@@ -4,6 +4,9 @@
   position: relative;
 }
 
+body {
+  width: 100%;
+}
 /* css for navbar */
 
 .navbar,
@@ -30,6 +33,7 @@
   box-sizing: border-box;
   width: 100%;
   position: fixed;
+  top: 0px;
   z-index: 2;
 }
 
@@ -111,7 +115,6 @@
 /* css for hero header */
 
 .banner {
-  /* background-color: rgb(40, 41, 43); */
   cursor: pointer;
   background-image: url(../cover_photo.jpg);
   background-size: cover;
