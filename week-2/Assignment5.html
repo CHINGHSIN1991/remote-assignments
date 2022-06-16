@@ -17,6 +17,7 @@
     specific target. You may assume that each input would have exactly one solution, and you
     may not use the same element twice. */
 
+    // //======================================Solution1======================================
     // function twoSum(nums, target) {
     //   let indexlist = [];
     //   for (let i = 0; i < nums.length - 1; i++) {
@@ -39,13 +40,56 @@
     //   return 'No such a pair of numbers';
     // }
 
-    function twoSum(nums, target) {
+    // //======================================Solution2======================================
+    // function twoSum(nums, target) {
+    //   let indexlist = [];
+    //   for (let i = 0; i < nums.length; i++) {
+    //     let index = nums.indexOf(target - nums[i]);
+    //     if (index >= 0) {
+    //       indexlist.push(i, index);
+    //       console.log(indexlist);
+    //       return indexlist;
+    //     }
+    //   }
+    //   console.log('No such a pair of numbers');
+    //   return 'No such a pair of numbers';
+    // }
+
+    // ======================================Solution3======================================
+    // function twoSum(nums, target) {
+    //   let indexlist = [];
+    //   let indexMap = new Map();
+    //   // 寫成物件
+    //   for (let i = 0; i < nums.length; i++) {
+    //     indexMap.set(nums[i], i);
+    //   }
+    //   // 以物件檢索
+    //   for (let j = 0; j < nums.length; j++) {
+    //     let goal = target - nums[j];
+    //     if (indexMap.has(goal) && j != indexMap.get(goal)) {
+    //       indexlist.push(j, indexMap.get(goal));
+    //       console.log(indexlist)
+    //       return indexlist;
+    //     }
+    //   }
+    //   console.log('No such a pair of numbers');
+    //   return 'No such a pair of numbers';
+    // }
+
+    // ======================================Solution4======================================
+    let twoSum = function (nums, target) {
       let indexlist = [];
+      let numedArray = {};
+      // 寫成物件
       for (let i = 0; i < nums.length; i++) {
-        let index = nums.indexOf(target - nums[i]);
-        if (index >= 0) {
-          indexlist.push(i, index);
-          console.log(indexlist);
+        numedArray[nums[i]] = i;
+      }
+      // 以物件檢索
+      for (let j = 0; j < nums.length; j++) {
+        let goal = target - nums[j];
+        if (goal in numedArray && j != numedArray[goal]){
+          indexlist.push(j, numedArray[goal]);
+          console.log(indexlist)
           return indexlist;
         }
       }
@@ -59,6 +103,8 @@
     twoSum([2, 7, 11, 15, 28,], 30); // return [0,4]
     twoSum([2, 7, 11, 15, 28,], 5); // return 'No such a pair of numbers'
     twoSum([2, 7, 11, -2, 0,], 0); // return [0,3]
+    twoSum([2, 2, 11, -2, 0,], 13); // return [0,2]
+    twoSum([2, 2, 11, 11, 0,], 13); // solution1＆2 return [0,2] but solution3＆4 return [0,3]← 檢索不會從最前面開始?????
 
     /*
     For example:
