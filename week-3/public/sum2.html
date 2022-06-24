@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8/">
+  <title>JavaScript:AJAX 網路連線實務</title>
+</head>
+
+<body>
+  <h3>get Sum</h3>
+  <form action="/getSum" method="post">
+    <input type="number" name="number" id="number" value="">
+    <input type="submit" id="send" value="getSum">
+  </form>
+  <button onclick="getData();">連線 / 取得資料</button>
+  <h3 id="result"></h3>
+  
+  <script>
+    const send = document.getElementById('send');
+    const number = document.getElementById('number');
+
+    send.addEventListener('click',function(e){
+      e.preventDefault();
+      const num = number.value;
+      console.log(num);
+      fetch(`http://localhost:3000/getData?number=`).then(function (response) {
+      return response.json();
+      }).then(function (data) {
+        //已經取得資料，把資料呈現在畫面上
+        let result = document.querySelector("#result");
+        let sum = 0;
+        for (let i = 0; i <= data; i++) {
+          sum += i;
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>
