@@ -1,0 +1,13 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Assignment2
+body
+  if number === 'NoQuery'
+    h2 Lack of Parameter
+  else if (typeof number === 'number' && number > 0)
+    h2 Sum of 1 to #{number} = #{sum}
+  else 
+    h2 Wrong Parameter
