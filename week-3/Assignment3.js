@@ -12,10 +12,6 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 
 //路由
-router.get('/', function (req, res) {
-  res.send('Hello, My Server!');
-  // console.log('here is someone coming！')
-})
 
 router.get('/getData', function (req, res, next) {
   let num = parseInt(req.query.number);

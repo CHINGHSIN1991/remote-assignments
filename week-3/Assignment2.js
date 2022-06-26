@@ -3,10 +3,6 @@ const express = require('express');
 const router = express();
 router.set('view engine', 'pug');
 
-router.get('/', (req, res) => {
-  res.render('Assignment2-index');
-});
-
 router.get('/getData', (req, res) => {
   let number = req.query.number;
   let sum;
@@ -18,12 +14,6 @@ router.get('/getData', (req, res) => {
     sum = Sigma(number);
   }
   res.render('Assignment2-getData', { number, sum });
-});
-
-router.post('/', (req, res) => {
-  const number = req.body.query.number;
-  console.log(number)
-  // res.redirect('/');
 });
 
 router.use((req, res, next) => {
