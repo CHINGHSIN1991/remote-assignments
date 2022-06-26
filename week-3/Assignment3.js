@@ -14,14 +14,15 @@ router.use(bodyParser.urlencoded({ extended: false }));
 //路由
 router.get('/', function (req, res) {
   res.send('Hello, My Server!');
-  console.log('here is someone coming！')
+  // console.log('here is someone coming！')
 })
 
 let process = function (req, res, next) {
-  let num = req.query.number;
+  let num = parseInt(req.query.number);
+  // console.log(num);
   let _url = req.url;
   if (_url == '/getData') {
-    next;
+    next();
   } else if (_url !== '/getData' && num > 0) {
     let sum = 0;
     for(let i=0; i<= num; i++){

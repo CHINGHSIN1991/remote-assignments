@@ -27,8 +27,9 @@
         console.log(res);
         return res.text();
       }).then(function (data) {
-        //已經取得資料，把資料呈現在畫面上
+        //取得資料，把資料呈現在畫面上
         const result = document.querySelector('#result');
+        console.log(data);
         result.innerHTML = data;
       }).catch((err) => {
         console.log(err);
