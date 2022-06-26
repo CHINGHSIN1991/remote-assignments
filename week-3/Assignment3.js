@@ -17,12 +17,12 @@ router.get('/', function (req, res) {
   // console.log('here is someone coming！')
 })
 
-let process = function (req, res, next) {
+router.get('/getData', function (req, res, next) {
   let num = parseInt(req.query.number);
   // console.log(num);
   let _url = req.url;
   if (_url == '/getData') {
-    next();
+    res.send('Lack of Parameter');
   } else if (_url !== '/getData' && num > 0) {
     let sum = 0;
     for(let i=0; i<= num; i++){
@@ -32,19 +32,6 @@ let process = function (req, res, next) {
   } else {
     res.send('Wrong Parameter');
   }
-}
-
-router.get('/getData', process, function (req, res) {
-  res.send('Lack of Parameter');
-})
-
-router.post('/sum.html', function (req, res) {
-  console.log(req.body);
-  res.send('hello!!')
-  // console.log(req.body);
-  // //轉址
-  // res.redirect('search');
-  // res.render('search');
 })
 
 router.listen(3000);
