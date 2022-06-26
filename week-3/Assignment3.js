@@ -13,8 +13,8 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 //路由
 router.get('/', function (req, res) {
-  res.send('你現在進入的東西是到首頁');
-  console.log('有人造訪首頁！')
+  res.send('Hello, My Server!');
+  console.log('here is someone coming！')
 })
 
 let process = function (req, res, next) {

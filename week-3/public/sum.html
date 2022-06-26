@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8/">
   <title>Assignment3</title>
 </head>
 
 <body>
-  <form action="/getSum" method="post">
-    <input type="number" name="number" id="number" value="">
-    <input type="submit" id="send" value="getSum">
-  </form>
-  
+  <h3>get Sum</h3>
+  <input type="number" name="number" id="number" value="">
+  <button type="submit" id="send">Get Sum</button>
+  <h3 id="result"></h3>
+
   <script>
     const send = document.getElementById('send');
     const number = document.getElementById('number');
+    const result = document.getElementById('result');
 
-    send.addEventListener('click',function(e){
-        e.preventDefault();
-        const num = number.value;
-        console.log(num);
-        const xhr = new XMLHttpRequest();
-        xhr.open('post','/sum.html');
-        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        const data = 'number='+num;
-        xhr.send(data);
-        xhr.onload = function(){
-          console.log(xhr.response);
-        }
-    })
+    send.addEventListener('click', function (e) {
+      e.preventDefault();
+      const num = number.value;
+      console.log(num);
+      fetch(`http://localhost:3000/getData?number=${num}`)
+      .then((res) => {
+        console.log(res);
+        return res.text();
+      }).then(function (data) {
+        //已經取得資料，把資料呈現在畫面上
+        const result = document.querySelector('#result');
+        result.innerHTML = data;
+      }).catch((err) => {
+        console.log(err);
+        // alert(err);
+      })
+    });
+
   </script>
 </body>
 
