@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
   console.log('有人造訪首頁！')
 })
 
-let login = function (req, res, next) {
+let process = function (req, res, next) {
   let num = req.query.number;
   let _url = req.url;
   if (_url == '/getData') {
@@ -33,7 +33,7 @@ let login = function (req, res, next) {
   }
 }
 
-router.get('/getData', login, function (req, res) {
+router.get('/getData', process, function (req, res) {
   res.send('Lack of Parameter');
 })
 

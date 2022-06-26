@@ -22,7 +22,8 @@
       e.preventDefault();
       const num = number.value;
       console.log(num);
-      fetch(`http://localhost:3000/getData?number=${num}`).then(function (res) {
+      fetch(`http://localhost:3000/getData?number=${num}`)
+      .then((res) => {
         console.log(res);
         return res.text();
       }).then(function (data) {
