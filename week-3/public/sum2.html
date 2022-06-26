@@ -9,32 +9,31 @@
 
 <body>
   <h3>get Sum</h3>
-  <form action="/getSum" method="post">
-    <input type="number" name="number" id="number" value="">
-    <input type="submit" id="send" value="getSum">
-  </form>
-  <button onclick="getData();">連線 / 取得資料</button>
+  <input type="number" name="number" id="number" value="">
+  <button type="submit" id="send">Get Sum</button>
   <h3 id="result"></h3>
-  
+
   <script>
     const send = document.getElementById('send');
     const number = document.getElementById('number');
+    const result = document.getElementById('result');
 
-    send.addEventListener('click',function(e){
+    send.addEventListener('click', function (e) {
       e.preventDefault();
       const num = number.value;
       console.log(num);
-      fetch(`http://localhost:3000/getData?number=`).then(function (response) {
-      return response.json();
+      fetch(`http://localhost:3000/getData?number=${num}`).then(function (res) {
+        return res.json();
       }).then(function (data) {
         //已經取得資料，把資料呈現在畫面上
-        let result = document.querySelector("#result");
-        let sum = 0;
-        for (let i = 0; i <= data; i++) {
-          sum += i;
-        }
-      });
-    }
+        const result = document.querySelector('#result');
+        const sum = data;
+        result.innerHTML = `Sum of 1 to ${num} = ${sum}`
+      }).catch((err) => {
+        console.log(err);
+        // alert(err);
+      })
+    });
 
   </script>
 </body>
