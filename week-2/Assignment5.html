@@ -102,9 +102,8 @@
       //hash table
       let hash = {};
 
-      for (let i = 0; i <= nums.length; i++) {
-        //current number
-        let currentNumber = nums[i];
+      for (let i = 0; i <= nums.length; i++) {        
+        let currentNumber = nums[i]; //current number
         let requiredNumber = target - currentNumber; // difference in the target and current number        
         const index2 = hash[requiredNumber]; // find the difference number from hashTable
 
