@@ -162,14 +162,14 @@ class Content extends React.Component {
         graphicUrl: "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       },
     ],
-    infobtn_content: "Press to know more",
+    infoBtn_content: "Press to know more",
     additionalPlatforms_property: "platforms platforms-hide",
   }
 
   knowMore = (e) => {
     e.preventDefault();
     this.setState({
-      infobtn_content: "Here are more platforms",
+      infoBtn_content: "Here are more platforms",
       additionalPlatforms_property: "platforms",
     });
   }
@@ -199,7 +199,7 @@ class Content extends React.Component {
           onClick={this.knowMore}
           id = "more-info-btn"
           className="more-info-btn">
-          {this.state.infobtn_content}
+          {this.state.infoBtn_content}
         </a>
         <div className={this.state.additionalPlatforms_property}>
           {this.state.additionalPlatforms.map(platform =>
