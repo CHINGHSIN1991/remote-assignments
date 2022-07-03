@@ -13,7 +13,8 @@
   <script>
     function ajax(src, callback) {
       fetch(src).then(res => { return res.json() })
-        .then(data => callback(data));
+        .then(data => callback(data))
+        .catch(err => console.log(err.message));
     }
     function render(data) {
       let result = document.getElementById('result');

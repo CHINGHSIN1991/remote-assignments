@@ -1,7 +1,10 @@
+// import Navbar from "./components/Navbar";
+
 class Navbar extends React.Component {
   state = {
     popupmenu_property: "popup-menu-hide",
     popupbg_property: "popmenu-bg-hide",
+    scrollY_property: "0",
   };
 
   menuOn = () => {
@@ -113,7 +116,7 @@ class Banner extends React.Component {
   }
 }
 
-const BannerContent = () => {
+function BannerContent () {
   return (
     <span>
       Mathematics <span className="divide-line">｜</span><span className="line-change"><br /></span>
@@ -215,7 +218,7 @@ class Content extends React.Component {
   }
 }
 
-const Platform = (props) => {
+function Platform (props) {
   return (
     <a href="" className="platform">
       <img className="platform-img"
@@ -227,17 +230,30 @@ const Platform = (props) => {
   );
 }
 
-const App = (props) => {
-  return (
-    <div>
-      <Navbar />
-      <Banner />
-      <Content />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return(
+      <div>
+        <Navbar />
+        <Banner />
+        <Content />
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+// function App () {
+//   return (
+//     <div>
+//       <Navbar />
+//       <Banner />
+//       <Content />
+//     </div>
+//   );
+// }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    <App />
 );
+
